@@ -12,26 +12,23 @@ function isDOMRequired()
 
 function beforeDwoopSave()
 {
+	//clear this array
 	dwoop.unsavedDocs=[];
-	dwoop.Trace('unsaved file count (should 0) now:'+dwoop.unsavedDocs.length);
+	
 	docList=dw.getDocumentList();
+	
 	for(var i=0;i<docList.length;i++)
 	{
 		if(dw.canSaveDocument(docList[i])){
-			dwoop.Trace('3');
 			dwoop.unsavedDocs.push(docList[i]);
-			dwoop.Trace('4');
 		}
 	}
 	
 	relList=dw.getRelatedFiles(false);
-	dwoop.Trace('rel file array length:'+relList.length);
 	
 	//first related file is the current file itself
-	
 	for(var i=1;i<relList.length;i++)
 	{
-		dwoop.Trace("file to save: "+relList[i].uri);
 		if(relList[i].charAt(0)=='h'){
 			continue;
 		}
@@ -40,7 +37,6 @@ function beforeDwoopSave()
 			d=dw.getDocumentDOM(relList[i]);
 		}catch(e){
 			d=MMNotes.localURLToFilePath(relList[i]);
-			dwoop.Trace("file to save: "+d);
 		}
 		if(dw.canSaveDocument(d)){
 			dwoop.unsavedDocs.push(d);
@@ -54,8 +50,6 @@ function beforeDwoopSave()
 	{
 		//dwoop.Trace(dwoop.unsavedDocs[i].URL);	
 	}
-
-	dwoop.Trace('leave beforedwoopsave');
 }
 </SCRIPT>
 </HEAD>

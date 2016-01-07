@@ -6,14 +6,14 @@
 
 function receiveArguments()
 {
-	var file=arguments[0],
-		dom=dw.openDocument(dwoop.navhistory[parseInt(file)].file);
+	var index=arguments[0],
+		dom=dw.openDocument(dwoop.navhistory[parseInt(index)].file);
 	
 	dom.source
 		.setCurrentLine(
-					dwoop.navhistory[parseInt(file)].line
+					dwoop.navhistory[parseInt(index)].line
 				);
-	dwoop.navhistory_current=parseInt(file);
+	dwoop.navhistory_current=parseInt(index);
 }
 
 // The default is true, so we need to specify for false, otherwise

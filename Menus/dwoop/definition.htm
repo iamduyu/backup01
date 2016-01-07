@@ -56,7 +56,6 @@ function definition()
 			}
 		}else{//only finds one position
 			destD=dreamweaver.openDocument(siteRoot+res[0]);
-			dwoop.Trace('file to open:'+siteRoot+res[0]);
 			destD.source.setCurrentLine(res[1]);
 		}		
 	}else{
@@ -66,21 +65,17 @@ function definition()
 
 function saveNavHistory()
 {
-	if(	(dwoop.navhistory_current!=-1)&&
-		(dwoop.navhistory_current!=(dwoop.navhistory.length-1))){
-		dwoop.navhistory.splice(dwoop.navhistory_current+1,dwoop.navhistory.length-(dwoop.navhistory_current+1));
-	}
 	var e=dw.getDocumentDOM();
-	dwoop.navhistory.push(
-		{
-			file:e.getOpenPathName(),
+	dwoop.navhistory.unshift({
+			file:MMNotes.localURLToFilePath(dreamweaver.getDocumentPath('document')),
 			line:e.source.getCurrentLines()[0]
-		}
-	);
+	});
+	
 	//only save 12 entrys
-	if(dwoop.navhistory.length>12)
+	if(dwoop.navhistory.length>20){
 		dwoop.navhistory.pop();
-	dwoop.navhistory_current=-1;
+	}
+	dwoop.navhistory_current++;
 }
 </script>
 
