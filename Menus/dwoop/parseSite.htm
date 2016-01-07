@@ -19,7 +19,12 @@ function doParse()
 {
 	var e=document.getElementById('parseAction');
 	if(e.value == 'parseSite'){
-		var sitepath=MMNotes.localURLToFilePath(site.getLocalRootURL(site.getCurrentSite()));
+		var sitepath=
+			MMNotes.localURLToFilePath(
+					site.getLocalRootURL(
+						site.getCurrentSite()
+					)
+			);
 		dwoop.ParseSite(sitepath);
 	}
 	window.close();	
