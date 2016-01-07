@@ -15,7 +15,7 @@ function beforeDwoopSave()
 	//clear this array
 	dwoop.unsavedDocs=[];
 	
-	docList=dw.getDocumentList();
+	var docList=dw.getDocumentList();
 	
 	for(var i=0;i<docList.length;i++)
 	{
@@ -24,14 +24,17 @@ function beforeDwoopSave()
 		}
 	}
 	
-	relList=dw.getRelatedFiles(false);
+	var relList=dw.getRelatedFiles(false);
 	
 	//first related file is the current file itself
 	for(var i=1;i<relList.length;i++)
 	{
+		//don't know why
 		if(relList[i].charAt(0)=='h'){
 			continue;
 		}
+		
+		//why we need this?
 		var d;
 		try{
 			d=dw.getDocumentDOM(relList[i]);
@@ -45,7 +48,6 @@ function beforeDwoopSave()
 	
 	
 	//trace all
-	//dwoop.Trace("unsaved files:"+dwoop.unsavedDocs.length);
 	for(var i=0;i<dwoop.unsavedDocs.length;i++)
 	{
 		//dwoop.Trace(dwoop.unsavedDocs[i].URL);	
