@@ -1,0 +1,82 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>definition</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+function isDOMRequired()
+{
+	return false;
+}
+
+function definition()
+{
+	var d=dw.getDocumentDOM();
+	var sels=d.source.getSelection();
+	var tag=d.source.getText(sels[0],sels[1]);
+	dwoop.Trace('symbol:'+tag);
+	dwoop.Trace('d.URL:'+d.URL);
+	var siteRoot=site.getSiteRootForURL(d.URL);
+	var tagFile=siteRoot+'dwoop';
+	dwoop.Trace(tagFile);
+	var res=dwoop.GetTagInfo(tagFile,tag);
+	dwoop.target=null;
+	if(!dwoop.navhistory){
+		dwoop.navhistory=[];
+		dwoop.navhistory_current=0;
+	}
+	
+	//if finds some positions
+	if(res){
+		//dwoop.Trace(typeof res === 'object');
+		//dwoop.Trace('length:'+res.length);	
+		
+		//more then one position
+		if(typeof res === 'object' && res.length>2){
+			//this is a dw's bug, 
+			//sometimes, you cannot move line when a command with gui is openning
+			//so we just get the line, and take a jump herr.
+			dw.runCommand('selDest.htm',res);
+			dwoop.Trace('target:'+dwoop.target);
+			if(dwoop.target!=null){
+				saveNavHistory();
+				var dom=dw.openDocument(siteRoot+res[dwoop.target]);
+				//dwoop.Trace('file to open:'+siteRoot+res[dwoop.target]);
+				dom.source.setCurrentLine(res[dwoop.target+1]);
+				//dwoop.Trace('line:'+res[dwoop.target+1]);
+			}
+		}else{//only finds one position
+			saveNavHistory();
+			destD=dreamweaver.openDocument(siteRoot+res[0]);
+			dwoop.Trace('file to open:'+siteRoot+res[0]);
+			destD.source.setCurrentLine(res[1]);
+		}		
+	}else{
+		alert('cannot find any definition!');
+	}
+}
+
+function saveNavHistory()
+{
+	if(	(dwoop.navhistory_current!=-1)&&
+		(dwoop.navhistory_current!=(dwoop.navhistory.length-1))){
+		dwoop.navhistory.splice(dwoop.navhistory_current+1,dwoop.navhistory.length-(dwoop.navhistory_current+1));
+	}
+	var e=dw.getDocumentDOM();
+	dwoop.navhistory.push(
+		{
+			file:e.getOpenPathName(),
+			line:e.source.getCurrentLines()[0]
+		}
+	);
+	//only save 12 entrys
+	if(dwoop.navhistory.length>12)
+		dwoop.navhistory.pop();
+	dwoop.navhistory_current=-1;
+}
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY onLoad="definition()">
+</BODY>
+</HTML>

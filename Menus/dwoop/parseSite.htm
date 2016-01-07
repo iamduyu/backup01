@@ -1,0 +1,52 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>Parse site</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+function isDOMRequired()
+{
+	return false;
+}
+
+//function  receiveArguments(arg)
+//{
+//	dwoop.res=arg;
+//}
+
+
+function doParse()
+{
+	var e=document.getElementById('parseAction');
+	if(e.value == 'parseSite'){
+		var sitepath=MMNotes.localURLToFilePath(site.getLocalRootURL(site.getCurrentSite()));
+		dwoop.ParseSite(sitepath);
+	}
+	window.close();	
+}
+
+function  commandButtons()
+{
+	return new Array("OK","doParse()","Cancel", "window.close()");
+}
+
+//function windowDimensions()
+//{  
+//	return "300,"+dwoop.res.length*50/2;
+//}
+
+function docLoad()
+{
+
+}
+
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY onLoad="docLoad()">
+<form style="width:300px">
+    <input type="radio" name="parseAction" id="parseAction" value="parseSite">
+  create ctags for current site
+</form>
+</BODY>
+</HTML>

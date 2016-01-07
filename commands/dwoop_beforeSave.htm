@@ -1,0 +1,64 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>dwoop before save</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+// Don't require syncing the DOM during File Save
+function isDOMRequired()
+{
+	return false;
+}
+
+function beforeDwoopSave()
+{
+	dwoop.unsavedDocs=[];
+	dwoop.Trace('unsaved file count (should 0) now:'+dwoop.unsavedDocs.length);
+	docList=dw.getDocumentList();
+	for(var i=0;i<docList.length;i++)
+	{
+		if(dw.canSaveDocument(docList[i])){
+			dwoop.Trace('3');
+			dwoop.unsavedDocs.push(docList[i]);
+			dwoop.Trace('4');
+		}
+	}
+	
+	relList=dw.getRelatedFiles(false);
+	dwoop.Trace('rel file array length:'+relList.length);
+	
+	//first related file is the current file itself
+	
+	for(var i=1;i<relList.length;i++)
+	{
+		dwoop.Trace("file to save: "+relList[i].uri);
+		if(relList[i].charAt(0)=='h'){
+			continue;
+		}
+		var d;
+		try{
+			d=dw.getDocumentDOM(relList[i]);
+		}catch(e){
+			d=MMNotes.localURLToFilePath(relList[i]);
+			dwoop.Trace("file to save: "+d);
+		}
+		if(dw.canSaveDocument(d)){
+			dwoop.unsavedDocs.push(d);
+		}
+	}
+	
+	
+	//trace all
+	//dwoop.Trace("unsaved files:"+dwoop.unsavedDocs.length);
+	for(var i=0;i<dwoop.unsavedDocs.length;i++)
+	{
+		//dwoop.Trace(dwoop.unsavedDocs[i].URL);	
+	}
+
+	dwoop.Trace('leave beforedwoopsave');
+}
+</SCRIPT>
+</HEAD>
+<BODY onLoad="beforeDwoopSave()">
+</BODY>
+</HTML>

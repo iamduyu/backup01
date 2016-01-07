@@ -1,0 +1,69 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>navHistory</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+function receiveArguments()
+{
+	var file=arguments[0];
+	dwoop.Trace("arg0:"+file);
+	var dom=dw.openDocument(dwoop.navhistory[parseInt(file)].file);
+	dwoop.Trace(typeof dwoop.navhistory[parseInt(file)].line);
+	dwoop.Trace(dwoop.navhistory[parseInt(file)].line);
+	dom.source.setCurrentLine(dwoop.navhistory[parseInt(file)].line);
+	dwoop.navhistory_current=parseInt(file);
+}
+
+// The default is true, so we need to specify for false, otherwise
+// dw.setActiveWindow() can lose focus
+function isDOMRequired()
+{
+  return false;
+}
+
+function canAcceptCommand()
+{
+	return true;
+}
+
+// getDynamicContent returns the contents of a dynamically generated menu.
+// returns an array of strings to be placed in the menu, with a unique
+// identifier for each item separated from the menu string by a semicolon.
+//
+// return null from this routine to indicate that you are not adding any
+// items to the menu
+function getDynamicContent(itemID)
+{	
+	if (dwoop.navhistory&&dwoop.navhistory.length > 0)
+	{
+		var loclist=[];
+		for (i=0; i<dwoop.navhistory.length; i++)
+		{
+			dwoop.Trace('nav his file:'+dwoop.navhistory[i].file);
+			loclist[i] = dwoop.navhistory[i].file.replace(/&/g,"&&");
+			loclist[i] +=" line:"+dwoop.navhistory[i].line;
+			loclist[i] += ";id='"+i+"'"; // each item needs an ID
+			dwoop.Trace("loclist1:"+loclist[i]);
+			loclist[i] = loclist[i].replace(/_/g,"%_");
+			dwoop.Trace("loclist2:"+loclist[i]);
+		}
+		return loclist;
+	}
+	return false;
+}
+
+function isCommandChecked(itemID)
+{
+	if(itemID==dwoop.navhistory_current)
+		return true;
+	else 
+		return false;
+}
+
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

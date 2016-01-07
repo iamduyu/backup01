@@ -1,0 +1,39 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>dwoop after save</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+// Don't require syncing the DOM during File Save
+function isDOMRequired()
+{
+  return false;
+}
+
+
+function afterDwoopSave()
+{
+	var sitepath=MMNotes.localURLToFilePath(site.getLocalRootURL(site.getCurrentSite()));
+	dwoop.Trace("site:"+sitepath);
+	 
+	dwoop.Trace("config:"+MMNotes.localURLToFilePath(dw.getConfigurationPath()));
+
+	for(var i=0;i<dwoop.unsavedDocs.length;i++)
+	{
+		if(!dwoop.unsavedDocs[i].isDesignViewUpdated()){
+			dwoop.unsavedDocs[i].synchronizeDocument();
+		}
+	 
+		if(!dw.canSaveDocument(dwoop.unsavedDocs[i])){
+			var filepath=MMNotes.localURLToFilePath(dwoop.unsavedDocs[i].URL);
+			dwoop.UpdateFile(sitepath,filepath);
+			dwoop.Trace('saved:'+filepath);
+		}
+	}
+}
+
+</SCRIPT>
+</HEAD>
+<BODY onLoad="afterDwoopSave()">
+</BODY>
+</HTML>

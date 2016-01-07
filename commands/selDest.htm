@@ -1,0 +1,69 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>select which location to go</TITLE>
+<SCRIPT LANGUAGE="javascript">
+
+function isDOMRequired()
+{
+	return false;
+}
+
+//reslut location
+dwoop.res=null;
+
+function  receiveArguments(arg)
+{
+	dwoop.res=arg;
+}
+
+function  commandButtons()
+{
+	return new Array("Cancel", "window.close()");
+}
+
+//function windowDimensions()
+//{  
+	//return "300,"+dwoop.res.length*26/2;
+//}
+
+function docLoad()
+{
+
+	for(var i=0;i<dwoop.res.length;i+=2)
+	{
+		dwoop.Trace('in this file:'+dwoop.res[i]);
+		document.forms[0].innerHTML+=
+			"<a href=\"#\" onMouseDown=\"jumpLine("+i+","+dwoop.res[i+1]+");\">"
+				+dwoop.res[i]+",line:"+dwoop.res[i+1]+"</a><br>";
+	}
+}
+
+function jumpLine(f,l)
+{
+	dwoop.Trace('to open this file:'+dwoop.res[f]);
+	dwoop.Trace('to move to this line: '+dwoop.res[f+1]);
+	var d=dw.getDocumentDOM();
+	var siteRoot=site.getSiteRootForURL(d.URL);
+	dwoop.target=null;
+	dwoop.target=f;
+	window.close();
+	return true;
+}
+
+function timeoutProc(line)
+{
+	dwoop.Trace(line);
+	var dom=dw.getDocumentDOM();
+	dwoop.Trace(dom.URL);
+	var b=dom.source.setCurrentLine(line);	
+}
+
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY onLoad="docLoad()">
+<form style="width:300px; height:380px" >
+</form>
+</BODY>
+</HTML>
