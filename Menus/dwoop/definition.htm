@@ -2,51 +2,59 @@
 <HTML>
 <HEAD>
 <TITLE>definition</TITLE>
-<SCRIPT LANGUAGE="javascript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
 
 function isDOMRequired()
 {
 	return false;
 }
 
+/**
+ * query dwoop to get tag info
+ */
 function definition()
 {
 	var d=dw.getDocumentDOM();
-	var sels=d.source.getSelection();
-	var tag=d.source.getText(sels[0],sels[1]);
-	dwoop.Trace('symbol:'+tag);
-	dwoop.Trace('d.URL:'+d.URL);
-	var siteRoot=site.getSiteRootForURL(d.URL);
-	var tagFile=siteRoot+'dwoop';
-	dwoop.Trace(tagFile);
-	var res=dwoop.GetTagInfo(tagFile,tag);
+	
+	//get the tag to jump
+	var sels=d.source.getSelection(),
+		tag=d.source.getText(sels[0],sels[1]);
+	
+	//get current site's path and load the tag file
+	var siteRoot=site.getSiteRootForURL(d.URL),
+		tagFile=siteRoot+'dwoop',
+		res=dwoop.GetTagInfo(tagFile,tag);
+	
+	//workaround, target is the index in dwoop.res array
 	dwoop.target=null;
+	
+	//init navhistory
 	if(!dwoop.navhistory){
 		dwoop.navhistory=[];
 		dwoop.navhistory_current=0;
 	}
 	
-	//if finds some positions
+	//if we finds some tag info
 	if(res){
-		//dwoop.Trace(typeof res === 'object');
-		//dwoop.Trace('length:'+res.length);	
 		
-		//more then one position
+		//more then one position?
 		if(typeof res === 'object' && res.length>2){
+			
 			//this is a dw's bug, 
 			//sometimes, you cannot move line when a command with gui is openning
-			//so we just get the line, and take a jump herr.
+			//so we just get the line in setDest dialog, and take a jump here.
 			dw.runCommand('selDest.htm',res);
-			dwoop.Trace('target:'+dwoop.target);
+			
 			if(dwoop.target!=null){
+				
+				//set to history
 				saveNavHistory();
+				
 				var dom=dw.openDocument(siteRoot+res[dwoop.target]);
-				//dwoop.Trace('file to open:'+siteRoot+res[dwoop.target]);
 				dom.source.setCurrentLine(res[dwoop.target+1]);
-				//dwoop.Trace('line:'+res[dwoop.target+1]);
 			}
 		}else{//only finds one position
-			saveNavHistory();
 			destD=dreamweaver.openDocument(siteRoot+res[0]);
 			dwoop.Trace('file to open:'+siteRoot+res[0]);
 			destD.source.setCurrentLine(res[1]);
@@ -74,8 +82,8 @@ function saveNavHistory()
 		dwoop.navhistory.pop();
 	dwoop.navhistory_current=-1;
 }
-</SCRIPT>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</script>
+
 </HEAD>
 <BODY onLoad="definition()">
 </BODY>

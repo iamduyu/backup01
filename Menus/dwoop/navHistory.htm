@@ -6,12 +6,13 @@
 
 function receiveArguments()
 {
-	var file=arguments[0];
-	dwoop.Trace("arg0:"+file);
-	var dom=dw.openDocument(dwoop.navhistory[parseInt(file)].file);
-	dwoop.Trace(typeof dwoop.navhistory[parseInt(file)].line);
-	dwoop.Trace(dwoop.navhistory[parseInt(file)].line);
-	dom.source.setCurrentLine(dwoop.navhistory[parseInt(file)].line);
+	var file=arguments[0],
+		dom=dw.openDocument(dwoop.navhistory[parseInt(file)].file);
+	
+	dom.source
+		.setCurrentLine(
+					dwoop.navhistory[parseInt(file)].line
+				);
 	dwoop.navhistory_current=parseInt(file);
 }
 
@@ -40,13 +41,10 @@ function getDynamicContent(itemID)
 		var loclist=[];
 		for (i=0; i<dwoop.navhistory.length; i++)
 		{
-			dwoop.Trace('nav his file:'+dwoop.navhistory[i].file);
 			loclist[i] = dwoop.navhistory[i].file.replace(/&/g,"&&");
 			loclist[i] +=" line:"+dwoop.navhistory[i].line;
 			loclist[i] += ";id='"+i+"'"; // each item needs an ID
-			dwoop.Trace("loclist1:"+loclist[i]);
 			loclist[i] = loclist[i].replace(/_/g,"%_");
-			dwoop.Trace("loclist2:"+loclist[i]);
 		}
 		return loclist;
 	}
