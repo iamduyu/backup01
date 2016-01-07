@@ -13,21 +13,27 @@ function isDOMRequired()
 
 function afterDwoopSave()
 {
-	var sitepath=MMNotes.localURLToFilePath(site.getLocalRootURL(site.getCurrentSite()));
-	dwoop.Trace("site:"+sitepath);
-	 
-	dwoop.Trace("config:"+MMNotes.localURLToFilePath(dw.getConfigurationPath()));
+	/**
+	 *
+	 */
+	var sitepath
+			=MMNotes.localURLToFilePath(
+				site.getLocalRootURL(
+						site.getCurrentSite()
+					)
+				);
 
-	for(var i=0;i<dwoop.unsavedDocs.length;i++)
-	{
+	for(var i=0;i<dwoop.unsavedDocs.length;i++){
+		
+		//sync design view data to source file
 		if(!dwoop.unsavedDocs[i].isDesignViewUpdated()){
 			dwoop.unsavedDocs[i].synchronizeDocument();
 		}
 	 
+	 	//update ctags file for those files
 		if(!dw.canSaveDocument(dwoop.unsavedDocs[i])){
 			var filepath=MMNotes.localURLToFilePath(dwoop.unsavedDocs[i].URL);
 			dwoop.UpdateFile(sitepath,filepath);
-			dwoop.Trace('saved:'+filepath);
 		}
 	}
 }

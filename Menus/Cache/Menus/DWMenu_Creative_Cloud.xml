@@ -1,0 +1,6 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem id="DWManageCloud_SyncNow" name="Sync Settings Now" enabled="dw.allowSync()" command="dw.syncNow()" domRequired="false" platform="win" />
+<menuitem id="DWManageCloud_LastSyncTime" name="Last Sync: None" enabled="false" domRequired="false" platform="win" />
+<separator />
+<menuitem id="DWManageCloud_Settings" name="Manage Sync Settings..." enabled="true" command="dw.showPreferencesDialog('creative cloud')" domRequired="false" platform="win" />
+<menuitem id="DWManageCloud_Account" name="Manage Creative Cloud Account..." enabled="true" command="dw.launchCCPage()" domRequired="false" platform="win" />

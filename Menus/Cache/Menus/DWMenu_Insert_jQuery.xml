@@ -1,0 +1,12 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem arguments="'jQueryAccordion'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryAccordion" name="_Accordion" isobject="true" />
+<menuitem arguments="'jQueryTabs'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryTabs" name="_Tabs" isobject="true" />
+<menuitem arguments="'jQueryDatepicker'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryDatepicker" name="_Datepicker" isobject="true" />
+<menuitem arguments="'jQueryProgressbar'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryProgressbar" name="_Progressbar" isobject="true" />
+<menuitem arguments="'jQueryDialog'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryDialog" name="D_ialog" isobject="true" />
+<menuitem arguments="'jQueryAutocomplete'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryAutocomplete" name="A_utocomplete" isobject="true" />
+<menuitem arguments="'jQuerySlider'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQuerySlider" name="_Slider" isobject="true" />
+<menuitem arguments="'jQueryButton'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryButton" name="_Button" isobject="true" />
+<menuitem arguments="'jQueryButtonset'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryButtonset" name="Butt_onset" isobject="true" />
+<menuitem arguments="'jQueryCheckbox'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryCheckbox" name="_Checkbox Buttons" isobject="true" />
+<menuitem arguments="'jQueryRadio'" file="Menus/MM/jQuery_Insert.htm" id="DWMenu_Insert_jQueryRadio" name="_Radio Buttons" isobject="true" />

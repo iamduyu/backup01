@@ -1,0 +1,10 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Brin_g To Front" command="dw.getDocumentDOM().arrange('front')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canArrange()" id="DWMenu_Modify_Arrange_BringFront" />
+<menuitem name="Sen_d To Back" command="dw.getDocumentDOM().arrange('back')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canArrange()" id="DWMenu_Modify_Arrange_SendBack" />
+<menuitem name="Align _Left" key="Cmd+Shift+1" command="dw.getDocumentDOM().align('left')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" id="DWMenu_Modify_Align_AlignLeft" />
+<menuitem name="Align _Right" key="Cmd+Shift+3" command="dw.getDocumentDOM().align('right')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" platform="win" id="DWMenu_Modify_Align_AlignRight" />
+<menuitem name="Align _Top" key="Cmd+Shift+4" command="dw.getDocumentDOM().align('top')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" platform="win" id="DWMenu_Modify_Align_AlignTop" />
+<menuitem name="Align _Bottom" key="Cmd+Shift+6" command="dw.getDocumentDOM().align('bottom')" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" id="DWMenu_Modify_Align_AlignBottom" />
+<separator />
+<menuitem name="Make Same _Width" key="Cmd+Shift+7" command="dw.getDocumentDOM().makeSizesEqual(true,false)" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" id="DWMenu_Modify_Align_MakeSameWidth" />
+<menuitem name="Make Same _Height" key="Cmd+Shift+9" command="dw.getDocumentDOM().makeSizesEqual(false,true)" enabled="dw.getFocus() == 'document' && dw.getDocumentDOM().canAlign()" id="DWMenu_Modify_Align_MakeSameHeight" />

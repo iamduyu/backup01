@@ -1,0 +1,2 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Expand All" key="Cmd+Opt+E" command="dw.getDocumentDOM().expandAllCodeFragments()" enabled="dw.getFocus(true) == 'textView' || dw.getFocus(true) == 'html'" showif="dw.featureManager.isEnabled(FeatureManager.MODERNCODEFOLDING)" domRequired="false" id="DWMenu_Edit_CodeCollapse_ExpandAllCodeFragments" />

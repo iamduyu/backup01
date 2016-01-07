@@ -1,0 +1,18 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Page Properties..." key="Cmd+J" command="dw.getDocumentDOM().showPagePropertiesDialog()" enabled="dw.getDocumentDOM() != null && !dw.getDocumentDOM().getIsLibraryDocument()" id="DWMenu_Modify_PageProperties" />
+<menuitem name="Template _Properties..." file="Commands/TemplateParams.htm" id="DWMenu_Modify_Templates_TemplateProperties" />
+<separator />
+<menuitem name="_Manage Fonts..." command="dw.webFonts()" enabled="true" id="DWContext_Modify_ManageFonts" />
+<separator />
+<menuitem name="_Quick Tag Editor..." key="Cmd+T" command="dw.showQuickTagEditor()" enabled="true" domRequired="FALSE" id="DWMenu_Modify_QTE" />
+<separator />
+<menuitem name="Make _Link..." key="Cmd+L" file="Menus/MM/Modify_HyperLink.htm" id="DWMenu_Modify_MakeLink" />
+<menuitem name="_Remove Link" key="Cmd+Shift+L" command="dw.getDocumentDOM().removeLink()" enabled=" (dw.getFocus() == 'document' || (dw.getFocus() == 'browser' &&( !dw.getDocumentDOM() || !dw.getDocumentDOM().getHideDisplaysInLiveView()))) && dw.getDocumentDOM().getLinkHref().length > 0" id="DWMenu_Modify_RemoveLink" />
+<menuitem name="_Open Linked Page..." arguments="'needFocus'" file="Menus/MM/Open_Linked_Page.htm" id="DWMenu_Modify_OpenLinkedPage" />
+<separator />
+<menu name="_Table" id="DWMenu_Modify_Table"></menu>
+<menu name="_Image" id="DWMenu_Modify_Image"></menu>
+<menu name="_Arrange" id="DWMenu_Modify_Arrange"></menu>
+<separator />
+<menu name="L_ibrary" id="DWMenu_Modify_Library"></menu>
+<menu name="T_emplates" id="DWMenu_Modify_Templates"></menu>

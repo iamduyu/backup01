@@ -1,0 +1,3 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Attach Style Sheet..." command="dw.cssStylePalette.attachStyleSheet()" enabled="dwscripts.canEditStyle()" id="DWContext_Text_CustomStyle_Attach" />
+<menuitem name="Con_vert Inline CSS to Rule..." command="dw.getDocumentDOM().convertInlineCssToRule()" enabled="dwscripts.canApplyStyle() && dw.getDocumentDOM().canConvertInlineCssToRule()" id="DWContext_Text_CustomStyle_Convert" />

@@ -1,0 +1,6 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Bold" arguments="'B'" file="Menus/MM/Text_Style.htm" id="DWContext_Table_Text_Style_B" />
+<menuitem name="_Italic" arguments="'I'" file="Menus/MM/Text_Style.htm" id="DWContext_Table_Text_Style_I" />
+<menuitem name="_Underline" arguments="'U'" file="Menus/MM/Text_Style.htm" id="DWContext_Table_Text_Style_U" />
+<separator />
+<menuitem name="_Strikethrough" arguments="'S'" file="Menus/MM/Text_Style.htm" id="DWContext_Table_Text_Style_S" />

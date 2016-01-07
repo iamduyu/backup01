@@ -1,0 +1,2 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Expand All" command="if (dw.getFocus(true) == 'html') {dw.htmlInspector.expandAllCodeFragments();} else {dw.getDocumentDOM().expandAllCodeFragments();}" enabled="dw.getFocus(true) == 'textView' || dw.getFocus(true) == 'html'" showif="dw.featureManager.isEnabled(FeatureManager.MODERNCODEFOLDING)" domRequired="false" id="DWContext_HTML_LiveCode_Selection_ExpandAllCodeFragments" />

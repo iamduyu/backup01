@@ -1,0 +1,29 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Insert" key="Cmd+F2" command="dw.toggleFloater('objects')" enabled="true" checked="dw.getFloaterVisibility('objects')" domRequired="false" id="DWMenu_Window_Insert" />
+<menuitem name="_Properties" key="Cmd+F3" command="dw.toggleFloater('properties')" enabled="dw.getFocus() != 'browser' || dw.getDocumentDOM().getDesignViewMode() == 'live'" checked="dw.getFloaterVisibility('properties')" domRequired="false" id="DWMenu_Window_Properties" />
+<menuitem name="Extract" key="Ctrl+K" command="dw.toggleFloater('DWPSDExtract')" enabled="dw.featureManager.isEnabled(FeatureManager.DWPSDEXTRACT)" checked="dw.getFloaterVisibility('DWPSDExtract')" id="DWMenu Window ExtractPanel" platform="win" />
+<separator />
+<menuitem name="_CSS Designer" key="Shift+F11" command="dw.toggleFloater('css styles')" enabled="dw.getFocus() != 'browser' || dw.getDocumentDOM().getDesignViewMode() == 'live'" checked="dw.getFloaterVisibility('css styles')" platform="win" domRequired="false" id="DWMenu_Window_CSSStyles" />
+<menuitem name="DOM" key="Cmd+/" command="dw.toggleFloater('DOMVis')" enabled="true" checked="dw.getFloaterVisibility('DOMVis')" domRequired="false" id="DWMenu_Window_DOMVis" />
+<menuitem name="CSS T_ransitions" command="dw.toggleFloater('ant')" enabled="dw.getFocus() != 'browser' || dw.getDocumentDOM().getDesignViewMode() == 'live'" checked="dw.getFloaterVisibility('ant')" domRequired="false" id="DWMenu_Window_Ant" />
+<separator />
+<menuitem name="_Files" key="F8" command="dw.toggleFloater('site files')" enabled="true" checked="dw.getFloaterVisibility('site files')" domRequired="false" id="DWMenu_Window_SiteFiles" />
+<menuitem name="_Assets" command="dw.toggleFloater('assets')" enabled="true" checked="dw.getFloaterVisibility('assets')" platform="win" domRequired="false" id="DWMenu_Window_Assets" />
+<menuitem name="S_nippets" key="Shift+F9" command="dw.toggleFloater('snippets')" enabled="dw.getFocus() != 'browser'" checked="dw.getFloaterVisibility('snippets')" platform="win" domRequired="false" id="DWMenu_Window_Snippets" />
+<separator />
+<menuitem name="jQuery Mobile Swatches" command="dw.toggleFloater('jQuerySwatchContainer')" enabled="dw.getDocumentDOM() != null && dw.getDocumentDOM().getParseMode() == 'html'" checked="dw.getFloaterVisibility('jQuerySwatchContainer')" id="DWMenu_Window_Jquery_Swatch" />
+<menuitem name="B_ehaviors" key="Shift+F4" command="dw.toggleFloater('behaviors')" enabled="dw.getFocus() != 'browser'" checked="dw.getFloaterVisibility('behaviors')" domRequired="false" id="DWMenu_Window_Behaviors" />
+<menuitem name="_History" key="Shift+F10" command="dw.toggleFloater('history')" enabled="dw.getFocus() != 'browser'" checked="dw.getFloaterVisibility('history')" platform="win" domRequired="false" id="DWMenu_Window_History" />
+<menuitem name="Co_de Inspector" key="F10" command="dw.toggleFloater('html')" enabled="dw.getFocus() != 'browser' || dw.getDocumentDOM().getDesignViewMode() == 'live'" checked="dw.getFloaterVisibility('html')" platform="win" domRequired="false" id="DWMenu_Window_HTML" />
+<menu name="_Results" id="DWMenu_Window_Results"></menu>
+<menuitem name="_Browse Add-ons..." command="dw.loadCCBrowser()" enabled="true" domRequired="false" id="DWMenu_Window_BrowseAddOns" />
+<menu id="DWMenu_File_ServicesCommands" name="E_xtensions"></menu>
+<separator />
+<menuitem name="_Workspace Layout" id="DWMenu_Window_Layout" />
+<menuitem name="Sho_w Panels" key="F4" file="Menus/MM/Window_Floaters.htm" id="DWMenu_Window_ShowPalettes" />
+<separator />
+<menuitem name="_Cascade" command="dw.cascade()" enabled="dw.getDocumentDOM() != null  && dw.canCascadeDocs()" domRequired="true" id="DWMenu_Window_cascade" />
+<menuitem name="Tile Hori_zontally" command="dw.tileHorizontally()" enabled="dw.getDocumentDOM() != null" platform="win" domRequired="true" id="DWMenu_Window_tileHorizontally" />
+<menuitem name="Tile _Vertically" command="dw.tileVertically()" enabled="dw.getDocumentDOM() != null" platform="win" domRequired="true" id="DWMenu_Window_tileVertically" />
+<separator />
+<menuitem name="(No Open Documents)" file="Menus/MM/Window_Titles.htm" id="DWMenu_Window_Default" dynamic="true" />

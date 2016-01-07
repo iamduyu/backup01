@@ -1,0 +1,10 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="W_elcome..." command="dw.startPage.showStartupPage()" showif="dw.startPage.isUserInHelloTestGroup()" id="DWMenu_Help_Welcome" />
+<menuitem name="_Learn Dreamweaver" command="dwscripts.browseURL('https://www.adobe.com/go/dwcc_tutorial',2)" enabled="true" id="DWMenu_Help_LearnDreamweaver" />
+<menuitem name="Reset _New Feature Guides" command="dw.resetNewFeatureGuides()" enabled="true" id="DWMenu_Help_NewFeatureGuides" />
+<menu name="H_elp and Support" id="DWMenu_Help_HelpAndSupport"></menu>
+<menuitem name="Submit _Bug/Feature Request" command="dwscripts.browseURL( dw.loadString('menus/wishform_url'), 0)" enabled="true" id="DWMenu_Help_Wishlist" />
+<separator />
+<menuitem file="Menus/MM/AMT.htm" id="DW_AMT" dynamic="true" />
+<separator platform="win" />
+<menuitem name="_About Dreamweaver" command="dw.showAboutBox()" enabled="true" platform="win" id="DWMenu_Help_About" />

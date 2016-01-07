@@ -1,0 +1,34 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<shortcut key="Opt+Left" platform="win" arguments="'back_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Back_Win" />
+<shortcut key="Browser_Back" platform="win" arguments="'back_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Back_ExtendedKeyboards" />
+<shortcut key="Opt+Right" platform="win" arguments="'forward_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Forward_Win" />
+<shortcut key="Browser_Forward" platform="win" arguments="'forward_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Forward_ExtendedKeyboards" />
+<shortcut key="Opt+Home" platform="win" arguments="'home_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Home_Win" />
+<shortcut key="Browser_Home" platform="win" arguments="'home_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Home_ExtendedKeyboards" />
+<shortcut key="F5" platform="win" arguments="'refresh_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Refresh_Win" />
+<shortcut key="Cmd+R" arguments="'refresh_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Refresh" />
+<shortcut key="Browser_Refresh" platform="win" arguments="'refresh_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Refresh_ExtendedKeyboards" />
+<shortcut key="Esc" arguments="'stop_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Stop" />
+<shortcut key="Browser_Stop" platform="win" arguments="'stop_button'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_Stop_ExtendedKeyboards" />
+<shortcut key="Cmd+Left" platform="win" arguments="'MoveWordLeft'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_MoveWordLeft_Win" />
+<shortcut key="Cmd+Right" platform="win" arguments="'MoveWordRight'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_MoveWordRight_Win" />
+<shortcut key="Cmd+Shift+Left" platform="win" arguments="'SelWordLeft'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelWordLeft_Win" />
+<shortcut key="Cmd+Shift+Right" platform="win" arguments="'SelWordRight'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelWordRight_Win" />
+<shortcut key="Home" platform="win" arguments="'MoveStartLine'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_MoveStartLine_Win" />
+<shortcut key="End" platform="win" arguments="'MoveEndLine'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_MoveEndLine_Win" />
+<shortcut key="Shift+Home" platform="win" arguments="'SelStartLine'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelStartLine_Win" />
+<shortcut key="Shift+End" platform="win" arguments="'SelEndLine'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelEndLine_Win" />
+<shortcut key="Cmd+Home" platform="win" arguments="'MoveStartTag'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelStartLine_Win" />
+<shortcut key="Cmd+End" platform="win" arguments="'MoveEndTag'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelEndLine_Win" />
+<shortcut key="Cmd+Shift+Home" platform="win" arguments="'SelStartTag'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelStartLine_Win" />
+<shortcut key="Cmd+Shift+End" platform="win" arguments="'SelEndTag'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelEndLine_Win" />
+<shortcut key="Shift+Up" arguments="'SelLineUp'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelLineUp" />
+<shortcut key="Shift+Down" arguments="'SelLineDown'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelLineDown" />
+<shortcut key="Shift+Left" arguments="'SelCharLeft'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelCharLeft" />
+<shortcut key="Shift+Right" arguments="'SelCharRight'" file="Menus/MM/Browser_Controls.htm" id="DWShortcuts_LiveViewBrowser_LiveTextEdit_SelCharRight" />
+<shortcut key="Del" command="if (dw.getDocumentDOM() && dw.getDocumentDOM().canHandleFGOperation()) { dw.getDocumentDOM().callFGFunction('Delete') } else { dw.handleLiveViewdelete() }" enabled="dw.canHandleLiveViewDelete()" domRequired="FALSE" id="DWShortcuts ELV Delete" />
+<shortcut key="Cmd+X" command="dw.handleLiveViewCut()" enabled="!(dw.getDocumentDOM() && dw.getDocumentDOM().canHandleFGOperation()) && dw.canHandleLiveViewCut()" domRequired="FALSE" id="DWShortcuts ELV Cut" />
+<shortcut key="Cmd+C" command="if (dw.getDocumentDOM() && dw.getDocumentDOM().canHandleFGOperation()) { dw.getDocumentDOM().callFGFunction('Copy') } else { dw.handleLiveViewCopy() }" enabled="dw.canHandleLiveViewCopy()" domRequired="FALSE" id="DWShortcuts ELV Copy" />
+<shortcut key="Cmd+V" command="if (dw.getDocumentDOM() && dw.getDocumentDOM().isFluidGridDoc() && dw.getDocumentDOM().getFGCopyId() != '') { dw.getDocumentDOM().callFGFunction('Paste') } else { dw.handleLiveViewPaste() }" enabled="dw.canHandleLiveViewPaste()" domRequired="FALSE" id="DWShortcuts ELV Paste" />
+<shortcut key="Cmd+D" command="if (dw.getDocumentDOM() && dw.getDocumentDOM().canHandleFGOperation()) { dw.getDocumentDOM().callFGFunction('Duplicate') } else { dw.handleLiveViewDuplicate() }" enabled="dw.canHandleLiveViewDuplicate()" domRequired="FALSE" id="DWShortcuts ELV Duplicate" />
+<shortcut key="BKSP" command="if (dw.getDocumentDOM() && dw.getDocumentDOM().canHandleFGOperation()) { dw.getDocumentDOM().callFGFunction('Delete') } else { dw.handleLiveViewBackSpace() }" enabled="dw.canHandleLiveViewBackSpace()" domRequired="FALSE" id="DWShortcuts ELV BackSpace" />

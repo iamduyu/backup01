@@ -1,0 +1,2 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Tag Library" command="dw.tagLibrary.showTagLibraryEditor()" enabled="true" id="DWContext_SelInspector_TagLibrary" />

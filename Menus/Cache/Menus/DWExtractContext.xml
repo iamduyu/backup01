@@ -1,0 +1,4 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Creative Cloud Assets" command="dw.psdExtract.refresh()" showif="dw.psdExtract.isWelcomeExpDismissed()" id="DWContext_Extract_Creative_Cloud_Files" />
+<menuitem name="Reload PSD" command="dw.psdExtract.reloadPSD()" showif="dw.psdExtract.showExtractReloadPSD() && dw.psdExtract.isWelcomeExpDismissed()" id="DWContext_Extract_Reload_PSD" />
+<menuitem name="Launch Tutorial" command="dw.psdExtract.launchTutorial()" showif="dw.psdExtract.isWelcomeExpDismissed()" id="DWContext_Extract_LAUNCH_TUTORIAL" />

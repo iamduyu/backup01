@@ -1,0 +1,4 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_New..." command="dw.cssStylePalette.newStyle('','','DWFormContext_CustomStyle_New')" enabled="dwscripts.canEditStyle()" id="DWFormContext_CustomStyle_New" />
+<menuitem name="_Attach Style Sheet..." command="dw.cssStylePalette.attachStyleSheet()" enabled="dwscripts.canEditStyle()" id="DWFormContext_CustomStyle_Attach" />
+<menuitem name="Con_vert Inline CSS to Rule..." command="dw.getDocumentDOM().convertInlineCssToRule()" enabled="dwscripts.canApplyStyle() && dw.getDocumentDOM().canConvertInlineCssToRule()" id="DWFormContext_CustomStyle_Convert" />

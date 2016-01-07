@@ -1,0 +1,5 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Cut" key="Cmd+X" command="dw.clipCut()" enabled="dw.canClipCut()" domRequired="FALSE" id="DWContext ELV LVE Cut" />
+<menuitem name="C_opy" key="Cmd+C" command="dw.clipCopy()" enabled="dw.canClipCopy()" domRequired="FALSE" id="DWContext ELV LVE Copy" />
+<menuitem name="Paste" key="Cmd+V" command="dw.clipPaste()" enabled="dw.canClipPaste()" domRequired="FALSE" id="DWContext ELV LVE Paste" />
+<menuitem name="Select _All" key="Cmd+A" command="dw.selectAll()" enabled="dw.canSelectAll()" domRequired="FALSE" id="DWContext ELV LVE SelectAll" />

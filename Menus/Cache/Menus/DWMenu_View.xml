@@ -1,0 +1,38 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Code" command="dw.getActiveWindow().setView('code')" enabled="dw.getActiveWindow() != null" checked="dw.getActiveWindow() != null && dw.getActiveWindow().getView() == 'code'" domRequired="FALSE" id="DWMenu_View_Text" />
+<menuitem name="_Split Code" command="dw.getActiveWindow().setView('split code')" enabled="dw.getActiveWindow() != null" checked="dw.getActiveWindow() != null && dw.getActiveWindow().getView() == 'split code'" domRequired="FALSE" id="DWMenu_View_SplitCode" />
+<menuitem file="Menus/MM/View_DesignView.htm" id="DWMenu_View_Design" dynamic="true" />
+<menuitem file="Menus/MM/View_CodeAndDesignView.htm" id="DWMenu_View_Split" dynamic="true" />
+<separator />
+<menuitem name="Split _Vertically " command="if(dw.getSplitViewOrientation() == 'vertical'){dw.setSplitViewOrientation('horizontal');}else{dw.setSplitViewOrientation('vertical');}" enabled="dw.getActiveWindow() != null && dw.getDocumentDOM() != null && ( dw.getDocumentDOM().getView() == 'split' || dw.getActiveWindow().getView() == 'split code')" checked="dw.getActiveWindow() != null && dw.getSplitViewOrientation() == 'vertical'" domRequired="FALSE" id="DWMenu_View_VerticalSplit" />
+<menuitem file="Menus/MM/View_SplitCode_DesignViewWhere.htm" id="DWMenu_View_DesignPrimary" dynamic="true" />
+<separator />
+<menuitem name="_Switch Views" key="Ctrl+`" file="Menus/MM/Switch_Views.htm" id="DWMenu_View_SwitchViews" />
+<menuitem key="F5" file="Menus/MM/View_RefreshDesign_View.htm" id="DWMenu_View_Refresh" dynamic="true" />
+<menuitem name="Refresh St_yles" arguments="'refresh_styles_button'" file="Menus/MM/Browser_Controls.htm" id="DWMenu_View_RefreshStyles" />
+<separator />
+<menuitem name="Toggle _Live View" arguments="'live_view_menu'" file="Menus/MM/LiveView.htm" id="DWMenu_View_LiveView" key="Opt+F11" enabled="(dw.getActiveWindow() != null) && !(dw.getActiveWindow().isFluidGridDoc())" />
+<menu name="Live View _Options" id="DWMenu_View_LiveView_Options"></menu>
+<menuitem name="Live _Code" arguments="'live_code'" file="Menus/MM/LiveView.htm" id="DWMenu_View_LiveCode" />
+<menuitem name="_Inspect" arguments="'inspect_ViewMenu'" file="Menus/MM/LiveView.htm" id="DWMenu_View_InspectMode" key="Opt+Shift+F11" />
+<separator />
+<menuitem name="Server Deb_ug" key="Cmd+Shift+G" command="dw.toggleLiveDebug();" enabled="(dw.getActiveWindow() != null) && (dw.canLiveDebug()) && dw.getActiveWindow().getDesignViewMode() != 'live'" checked="(dw.getActiveWindow() != null && dw.getActiveWindow().getView() == 'browse')" platform="win" id="DWMenu_View_LiveDebug" showif="dw.getActiveWindow() && dw.getActiveWindow().getServerNameFromDoc() != ''" />
+<separator platform="win" />
+<menu name="_Visual Aids" id="DWMenu_View_VisualAids"></menu>
+<menu name="_Style Rendering" id="DWMenu_View_Styles"></menu>
+<menu name="Code Vie_w Options" id="DWMenu_View_CodeView"></menu>
+<separator />
+<menu name="Window Si_ze" id="DWMenu_View_WindowSize"></menu>
+<menu name="Magni_fication" id="DWMenu_View_Magnification"></menu>
+<menu name="_Rulers" id="DWMenu_View_Rulers"></menu>
+<menu name="_Grid" id="DWMenu_View_Grid"></menu>
+<menu name="G_uides" id="DWMenu_View_Guides"></menu>
+<menu name="Tracing I_mage" id="DWMenu_View_TracingImage"></menu>
+<separator />
+<menuitem name="Display E_xternal Files" command="dw.setDownloadExternalFiles(!dw.getDownloadExternalFiles())" checked="dw.getDownloadExternalFiles()" id="DWMenu_View_RemoteDownload" />
+<menuitem name="Show _Panels" key="F4" file="Menus/MM/Window_Floaters.htm" id="DWMenu_View_ShowPalettes" />
+<menu name="Tool_bars" id="DWMenu_View_Toolbars"></menu>
+<separator />
+<menu name="_Related Files" id="DWMenu_ViewRelated_Files"></menu>
+<menu name="Related Files _Options" id="DWMenu_ViewRelated_Files_Options"></menu>
+<menuitem name="_Code Navigator..." key="Cmd+Opt+N" command="dw.popupCodeNavigator()" enabled="dw.canPopupCodeNavigator()" domRequired="FALSE" id="DWMenu_View_CodeNavigator" />

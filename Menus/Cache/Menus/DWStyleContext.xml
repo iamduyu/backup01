@@ -1,0 +1,23 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Go to Code" command="dw.cssStylePalette.editSelectedStyleInCodeview()" enabled="dw.cssStylePalette.canEditSelectedStyleInCodeview()" id="DWContext_CSSStyle_Edit_in_CV" />
+<menuitem name="_New..." command="dw.cssStylePalette.newStyle()" enabled="dwscripts.canEditStyle()" id="DWContext_CSSStyle_New" />
+<menuitem name="_Edit..." command="dw.cssStylePalette.editSelectedStyle()" enabled="dw.cssStylePalette.canEditSelectedStyle()" id="DWContext_CSSStyle_Edit" />
+<menuitem name="_Duplicate..." command="dw.cssStylePalette.duplicateSelectedStyle()" enabled="dw.cssStylePalette.canDuplicateSelectedStyle()" id="DWContext_CSSStyle_Duplicate" />
+<menuitem name="_Rename Class..." command="dw.cssStylePalette.renameSelectedStyle()" enabled="dw.cssStylePalette.canRenameSelectedStyle()" id="DWContext_CSSStyle_Rename" />
+<menuitem name="Edit _Selector" command="dw.cssStylePalette.editInPlaceSelectedSelector()" enabled="dw.cssStylePalette.canEditInPlaceSelectedSelector()" id="DWContext_CSSStyle_EditInPlace" />
+<menuitem name="_Move CSS Rules..." command="dw.cssStylePalette.moveSelectedStyles()" enabled="dw.cssStylePalette.canMoveSelectedStyles()" id="DWContext_CSSStyle_Move" />
+<menuitem name="Disable" file="Menus/MM/Declaration_Disable.htm" id="DWContext_CSS_Disable" />
+<menuitem name="Enable All Disabled in Selected Rule" command="dw.cssStylePalette.enableAllDisabled()" enabled="dw.cssStylePalette.canEnableAllDisabled('stylelist')" id="DWContext_CSS_EnableAllInRule" />
+<menuitem name="Delete All Disabled in Selected Rule" command="dw.cssStylePalette.deleteAllDisabled()" enabled="dw.cssStylePalette.canDeleteAllDisabled('stylelist')" id="DWContext_CSS_DeleteAllInRule" />
+<menuitem name="_Apply" command="dw.cssStylePalette.applySelectedStyle()" enabled="dwscripts.canApplyStyle() && dw.cssStylePalette.canApplySelectedStyle()" id="DWContext_CSSStyle_Apply" />
+<menuitem name="_Cut" key="Cmd+X" command="dw.clipCut()" enabled="dw.canClipCut() && !dw.cssStylePalette.isSelectedHiddenStyle()" id="DWContext_CSSStyle_Cut" />
+<menuitem name="Cop_y" key="Cmd+C" command="dw.clipCopy()" enabled="dw.canClipCopy() && !dw.cssStylePalette.isSelectedHiddenStyle()" id="DWContext_CSSStyle_Copy" />
+<menuitem name="P_aste" key="Cmd+V" command="dw.clipPaste()" enabled="dw.canClipPaste()" id="DWContext_CSSStyle_Paste" />
+<menuitem name="De_lete" key="Del" command="dw.cssStylePalette.deleteSelectedStyle()" enabled="dw.cssStylePalette.canDeleteSelectedStyle()" id="DWContext_CSSStyle_Delete" />
+<separator />
+<menu name="Site" id="DWContext_CSS_Site"></menu>
+<separator />
+<menuitem name="Use External Editor" command="dw.setPreferenceString('STYLE SHEET PREFERENCES', 'Use External Editor', (dw.getPreferenceString('STYLE SHEET PREFERENCES', 'Use External Editor', 'FALSE') == 'FALSE'?'TRUE':'FALSE'))" enabled="true" checked="dw.getPreferenceString('STYLE SHEET PREFERENCES', 'Use External Editor', 'FALSE') == 'TRUE'" id="DWContext_CSSStyle_UseExternalEditor" />
+<menuitem name="Switch to CSS Designer panel" command="dw.cssStylePalette.onSwitchToModernView()" enabled="dw.cssStylePalette.canSwitchToModernView()" id="DWContext_CSSStyle_SwitchToModernView" />
+<separator />
+<menuitem name="Atta_ch Style Sheet..." command="dw.cssStylePalette.attachStyleSheet()" enabled="dwscripts.canEditStyle()" id="DWContext_CSSStyle_Attach" />

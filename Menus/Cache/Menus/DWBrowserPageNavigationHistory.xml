@@ -1,0 +1,2 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="menus/DWPopup_BrowserHistory" file="Menus/MM/Browser_PageNavigationHistory.htm" id="DWPopup_BrowserPageNavigationHistoryList" dynamic="true" />

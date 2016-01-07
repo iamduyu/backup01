@@ -1,0 +1,4 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="No Browsers Selected" arguments="'No Browsers'" file="Menus/MM/PIB_Dynamic.htm" id="SiteOptionsFileMenu_PIB_Default" dynamic="true" />
+<separator />
+<menuitem name="_Edit Browser List..." command="dw.editBrowserList()" enabled="true" id="SiteOptionsFileMenu_PIB_EditList" />

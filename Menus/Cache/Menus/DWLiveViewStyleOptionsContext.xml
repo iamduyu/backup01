@@ -1,0 +1,5 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menu name="Go to Code" id="DWLiveViewContext_GotoCSSCodeParent" showIf="dw.getNumberOfMatchingSelectors() > 1"></menu>
+<menu name="Paste Styles" id="DWLiveViewContext_PasteStylesParent" showIf="dw.getNumberOfMatchingSelectors() > 1 && dw.isContentAvailableForCSSPaste()"></menu>
+<menuitem name="Go to Code" showIf="dw.getNumberOfMatchingSelectors() <= 1" command="dw.handleLiveViewGotoCode(0)" enabled="dw.getNumberOfMatchingSelectors() == 1" domRequired="FALSE" id="DWLiveViewContext_GotoCSSCode_SingleRule" />
+<menuitem name="Paste Styles" showIf="dw.getNumberOfMatchingSelectors() <= 1 || (dw.getNumberOfMatchingSelectors() > 1 && !dw.isContentAvailableForCSSPaste())" command="dw.handleLiveViewPasteStyles(0)" enabled="dw.getNumberOfMatchingSelectors() == 1 && dw.isContentAvailableForCSSPaste()" domRequired="FALSE" id="DWLiveViewContext_PasteStyles_SingleRule" />

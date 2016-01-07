@@ -1,0 +1,10 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Indent" key="Cmd+Opt+]" command="if ( (dw.getFocus() == 'document' || dw.getFocus() == 'browser')  && dw.getFocus(true) != 'html') {dw.getDocumentDOM().indent()} else {dw.getDocumentDOM().source.indentTextView()}" enabled="dw.getFocus() == 'textView' || dw.getFocus(true) == 'html' || ( (dw.getFocus() == 'document' && dw.getDocumentDOM().getFocus() == 'body') || (dw.getFocus() == 'browser' && ( !dw.getDocumentDOM() || !dw.getDocumentDOM().getHideDisplaysInLiveView()) && dw.getActiveWindow(true) && dw.getActiveWindow(true).browser && dw.getActiveWindow(true).browser.isSelectedTagEditable())) " domRequired="false" id="DWMenu_Text_Indent" />
+<menuitem name="_Outdent" key="Cmd+Opt+[" command="if ((dw.getFocus() == 'document' || dw.getFocus() == 'browser') && dw.getFocus(true) != 'html') {dw.getDocumentDOM().outdent()} else {dw.getDocumentDOM().source.outdentTextView()}" enabled="dw.getFocus() == 'textView' || dw.getFocus(true) == 'html' || ( (dw.getFocus() == 'document' && dw.getDocumentDOM().getFocus() == 'body') || (dw.getFocus() == 'browser' && ( !dw.getDocumentDOM() || !dw.getDocumentDOM().getHideDisplaysInLiveView()) && dw.getActiveWindow(true) && dw.getActiveWindow(true).browser && dw.getActiveWindow(true).browser.isSelectedTagEditable()))" domRequired="false" id="DWMenu_Text_Outdent" />
+<menu name="Paragraph _Format" id="DWMenu_Text_Format"></menu>
+<menu name="L_ist" id="DWMenu_Text_List"></menu>
+<separator />
+<menu name="_HTML Style" id="DWMenu_Text_Style"></menu>
+<menu name="_CSS Styles" id="DWMenu_Text_CustomStyle"></menu>
+<menu name="Si_ze" showif="(dw.getPreferenceString('General Preferences','Avoid Font Tags','TRUE') == 'FALSE')" id="DWMenu_Text_Size"></menu>
+<menu name="Size C_hange" showif="(dw.getPreferenceString('General Preferences','Avoid Font Tags','TRUE') == 'FALSE')" id="DWMenu_Text_SizeChange"></menu>

@@ -1,0 +1,6 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Display Styles" command="dw.cssStylePalette.setDisplayStyles(dw.cssStylePalette.getDisplayStyles() == false);" enabled="dw.getDocumentDOM() != null && dw.getDocumentDOM().getDesignViewMode() == 'editable'" checked="dw.cssStylePalette.getDisplayStyles() == true" id="DWMenu_View_Styles_Display" />
+<separator />
+<menuitem name="_Increase Text Size" command="dw.getDocumentDOM().incrementTextSizeZoomLevel()" enabled="dw.getDocumentDOM() != null && dw.getDocumentDOM().getDesignViewMode() == 'editable'" id="DWMenu_View_Styles_IncreaseTextSize" />
+<menuitem name="_Decrease Text Size" command="dw.getDocumentDOM().decrementTextSizeZoomLevel()" enabled="dw.getDocumentDOM() != null && dw.getDocumentDOM().getDesignViewMode() == 'editable'" id="DWMenu_View_Styles_DecreaseTextSize" />
+<menuitem name="_Reset Text Size" command="dw.getDocumentDOM().resetTextSizeZoomLevel()" enabled="(dw.getDocumentDOM() != null) && (dw.getDocumentDOM().getTextSizeZoomLevel() != 0) && dw.getDocumentDOM().getDesignViewMode() == 'editable'" id="DWMenu_View_Styles_ResetTextSize" />

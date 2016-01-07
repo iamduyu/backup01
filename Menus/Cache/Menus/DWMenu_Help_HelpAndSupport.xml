@@ -1,0 +1,4 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Dreamweaver Online Help" key="F1" arguments="'AH_HOME'" enabled="true" file="Menus/MM/CSHelp.htm" id="DWMenu_Help_DWHelp" />
+<menuitem name="Dreamweaver _Support Center" arguments="'AH_RESOURCES'" enabled="true" file="Menus/MM/CSHelp.htm" id="DWMenu_DW_Help_SupportCenter" />
+<menuitem name="Adobe Online _Forums" command="dwscripts.browseURL('https://www.adobe.com/go/dreamweaver_newsgroup',2)" enabled="true" id="DWMenu_Help_Forums" />

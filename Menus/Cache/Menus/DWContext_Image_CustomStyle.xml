@@ -1,0 +1,3 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_New..." command="dw.cssStylePalette.newStyle('','','DWContext_Image_CustomStyle_New')" enabled="dwscripts.canEditStyle()" id="DWContext_Image_CustomStyle_New" />
+<menuitem name="_Attach Style Sheet..." command="dw.cssStylePalette.attachStyleSheet()" enabled="dwscripts.canEditStyle()" id="DWContext_Image_CustomStyle_Attach" />

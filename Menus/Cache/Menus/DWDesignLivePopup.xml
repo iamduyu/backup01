@@ -1,0 +1,3 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="Live" file="Menus/MM/LiveView.htm" arguments="'live_view'" id="DWPopup_ViewToggle_ELV" />
+<menuitem name="Design" file="Menus/MM/LiveView.htm" arguments="'design_view'" id="DWPopup_ViewToggle_DV" />

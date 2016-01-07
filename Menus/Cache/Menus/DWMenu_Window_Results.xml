@@ -1,0 +1,7 @@
+﻿<menus xmlns:MMString="http://www.macromedia.com/schemes/data/string/">
+<menuitem name="_Output" key="Shift+F6" command="dw.toggleFloater('nodeOutput')" enabled="true" checked="dw.getFloaterVisibility('nodeOutput')" domRequired="false" id="DWMenu_Window_Output" />
+<menuitem name="_Search" key="F7" command="dw.toggleFloater('search')" enabled="true" checked="dw.getFloaterVisibility('search')" domRequired="false" id="DWMenu_Window_Search" />
+<menuitem name="_Validation" command="dw.toggleFloater('validation')" enabled="true" checked="dw.getFloaterVisibility('validation')" domRequired="false" id="DWMenu_Window_ValidationPanel" showif="dw.featureManager.isEnabled(FeatureManager.VALIDATOR)" />
+<menuitem name="_Link Checker" command="dw.toggleFloater('linkchecker')" enabled="true" checked="dw.getFloaterVisibility('linkchecker')" domRequired="false" id="DWMenu_Window_LinkCheckerPanel" />
+<menuitem name="S_ite Reports" command="dw.toggleFloater('reports')" enabled="true" checked="dw.getFloaterVisibility('reports')" domRequired="false" id="DWMenu_Window_ReportPanel" />
+<menuitem name="_FTP Log" command="dw.toggleFloater('ftplog')" enabled="true" checked="dw.getFloaterVisibility('ftplog')" domRequired="false" id="DWMenu_Window_FTP_LogPanel" />
