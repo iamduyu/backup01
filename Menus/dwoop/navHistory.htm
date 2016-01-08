@@ -41,10 +41,10 @@ function getDynamicContent(itemID)
 		var loclist=[];
 		for (i=0; i<dwoop.navhistory.length; i++)
 		{
-			loclist[i] =  dwoop.navhistory[i].tag + ' <= '
+			loclist[i] =  dwoop.navhistory[i].tag + ' ⇦ ';
 			loclist[i] += dwoop.navhistory[i].file.replace(/&/g,"&&");
-			loclist[i] +=" line:"+dwoop.navhistory[i].line;
-			loclist[i] += ";id='"+i+"'"; // each item needs an ID
+			loclist[i] +=":"+dwoop.navhistory[i].line;
+			//loclist[i] += ";id='"+i+"'"; // each item needs an ID
 			loclist[i] = loclist[i].replace(/_/g,"%_");
 		}
 		return loclist;
