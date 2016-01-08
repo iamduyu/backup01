@@ -46,35 +46,50 @@ function definition()
 			//so we just get the line in setDest dialog, and take a jump here.
 			dw.runCommand('selDest.htm',res);
 			
+			
+			//user really select and want to jump to
 			if(dwoop.target!=null){
 				
-				//set to history
-				saveNavHistory();
+				//save current file position to history, before jump
+				saveNavHistory(tag);
 				
-				var dom=dw.openDocument(siteRoot+res[dwoop.target]);
-				dom.source.setCurrentLine(res[dwoop.target+1]);
+				dreamweaver
+					.openDocument(siteRoot+res[dwoop.target])
+					.source
+					.setCurrentLine(res[dwoop.target+1]);
 			}
 		}else{//only finds one position
-			destD=dreamweaver.openDocument(siteRoot+res[0]);
-			destD.source.setCurrentLine(res[1]);
+			
+			//save current file position to history, before jump
+			saveNavHistory(tag);
+			
+			dreamweaver
+				.openDocument(siteRoot+res[0])
+				.source
+				.setCurrentLine(res[1]);
 		}		
 	}else{
 		alert('cannot find any definition!');
 	}
 }
 
-function saveNavHistory()
+function saveNavHistory(tag)
 {
 	var e=dw.getDocumentDOM();
+	
+	//the item passed to nav history function is extensable
 	dwoop.navhistory.unshift({
 			file:MMNotes.localURLToFilePath(dreamweaver.getDocumentPath('document')),
-			line:e.source.getCurrentLines()[0]
+			line:e.source.getCurrentLines()[0],
+			tag:tag
 	});
 	
-	//only save 12 entrys
+	//only save 20 entrys
 	if(dwoop.navhistory.length>20){
 		dwoop.navhistory.pop();
 	}
+	
+	//sync curent position "pointer"
 	dwoop.navhistory_current++;
 }
 </script>
