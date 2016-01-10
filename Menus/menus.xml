@@ -982,6 +982,7 @@
             <menu mmstring:name="menus/DWContext_HTML_CodeNav" id="DWContext_HTML_CodeNav">
                 <menuitem mmstring:name="menus/DWContext_HTML_CodeNav_Default" enabled="false" file="Menus/MM/CodeNav_Dynamic.htm" domRequired="false" id="DWContext_HTML_CodeNav_Default" dynamic="true" />
             </menu>
+			<!-- dwoop go to definition command -->
 			<menuitem domRequired="false" file="Menus/dwoop/definition.htm" id="dwoop_go_to_definition" name="Go To Definition..."/>
             <menu mmstring:name="menus/DWContext_HTML_Selection" id="DWContext_HTML_Selection">
                 <!-- stubbing old selection based code folding		
@@ -2711,6 +2712,7 @@
                 <separator />
 
                 <menu mmstring:name="menus/DWMenu_Insert_responsiveInputGroups" id="DW_responsiveInputGroups">
+
                     <menuitem mmstring:name="menus/DWMenu_Insert_responsiveInputGroupsCase1" enabled="(dw.getActiveWindow(true) != null && dw.getActiveWindow(true).allowsEdits()) && dw.getDocumentDOM() != null && dw.getDocumentDOM().getParseMode() == 'html' && !( dw.getDocumentDOM().getIsTemplateDocument() && dw.getFocus() == 'browser') && (!dw.getActiveWindow(true).browser || (dw.getActiveWindow(true).browser && !dw.getActiveWindow(true).browser.isLiveEditingInProgress()))" file="Responsive/InputGroups/responsiveInputGroupsCase1.htm" id="DW_responsiveInputGroupsBasic" />
                     <menuitem mmstring:name="menus/DWMenu_Insert_responsiveInputGroupsLarge" enabled="(dw.getActiveWindow(true) != null && dw.getActiveWindow(true).allowsEdits()) && dw.getDocumentDOM() != null && dw.getDocumentDOM().getParseMode() == 'html' && !( dw.getDocumentDOM().getIsTemplateDocument() && dw.getFocus() == 'browser') && (!dw.getActiveWindow(true).browser || (dw.getActiveWindow(true).browser && !dw.getActiveWindow(true).browser.isLiveEditingInProgress()))" file="Responsive/InputGroups/responsiveInputGroupsLarge.htm" id="DW_responsiveInputGroupsLarge" />
                     <menuitem mmstring:name="menus/DWMenu_Insert_responsiveInputGroupsSmall" enabled="(dw.getActiveWindow(true) != null && dw.getActiveWindow(true).allowsEdits()) && dw.getDocumentDOM() != null && dw.getDocumentDOM().getParseMode() == 'html' && !( dw.getDocumentDOM().getIsTemplateDocument() && dw.getFocus() == 'browser') && (!dw.getActiveWindow(true).browser || (dw.getActiveWindow(true).browser && !dw.getActiveWindow(true).browser.isLiveEditingInProgress()))" file="Responsive/InputGroups/responsiveInputGroupsSmall.htm" id="DW_responsiveInputGroupsSmall" />
@@ -3112,7 +3114,8 @@
             <menuitem mmstring:name="menus/DWMenu_Site_NewSite" command="site.newSite()" enabled="true" id="DWMenu_Site_NewSite" />
             <menuitem mmstring:name="menus/DWMenu_Site_DefineSites" arguments="'definesites'" enabled="true" file="Menus/MM/Site_File.htm" domRequired="false" id="DWMenu_Site_DefineSites" />
             <separator />
-			<menuitem domRequired="false" file="Menus/dwoop/parsesite.htm" id="dwoop_parse_site" name="Create Tags File..."/>
+			<!-- dwoop parse site -->
+			<menuitem domRequired="false" file="Menus/dwoop/parsesite.htm" id="dwoop_parse_site" name="Create CTags File..."/>
             <menuitem mmstring:name="menus/DWMenu_Site_Get" key="Cmd+Shift+D" arguments="'get','document'" file="Menus/MM/Site_File.htm" domRequired="true" id="DWMenu_Site_Get" />
             <menuitem mmstring:name="menus/DWMenu_Site_Checkout" key="Cmd+Opt+Shift+D" arguments="'checkout','document'" file="Menus/MM/Site_File.htm" domRequired="true" id="DWMenu_Site_Checkout" />
             <menuitem mmstring:name="menus/DWMenu_Site_Put" key="Cmd+Shift+U" arguments="'put','document'" file="Menus/MM/Site_File.htm" domRequired="true" id="DWMenu_Site_Put" />
@@ -3222,9 +3225,11 @@
             <menuitem mmstring:name="menus/DWContext_LocalSite_VCS_Delete" arguments="'vcs_delete','repository'" file="Menus/MM/Site_VCS.htm" id="DWContext_RepositorySite_VCS_Delete" />
         </menu>
     </menubar>
-		<menubar id="DWOOP_nav_history_menubar">
+	<!-- dwoop nav history menu bar -->
+	<menubar id="DWOOP_nav_history_menubar">
 			<menu id="DWOOP_nav_history_menu" name="dwoop nav menu">
 			<menuitem dynamic="true" file="Menus/dwoop/navHistory.htm" id="DWOOP_nav_history_menuitem" name="dwoop nav menuitem"/>
 		</menu>
 	</menubar>
+	
 </menus>
