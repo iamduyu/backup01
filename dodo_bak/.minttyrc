@@ -27,6 +27,6 @@ BoldCyan=95,227,210
 White=248,248,242
 BoldWhite=249,248,245
 FontSmoothing=partial
-Scrollbar=none
+Scrollbar=right
 Locale=zh_CN
 Charset=GBK

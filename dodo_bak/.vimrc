@@ -1,3 +1,4 @@
+
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
 " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -101,16 +102,26 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
-" Use visual bell instead of beeping when doing something wrong
-set visualbell
+if has('gui_running')
+else
+    " Use visual bell instead of beeping when doing something wrong
+    set visualbell
 
-" And reset the terminal code for the visual bell. If visualbell is set, and
-" this line is also included, vim will neither flash nor beep. If visualbell
-" is unset, this does nothing.
-set t_vb=
+    " And reset the terminal code for the visual bell. If visualbell is set, and
+    " this line is also included, vim will neither flash nor beep. If visualbell
+    " is unset, this does nothing.
+    set t_vb=
 
-" Enable use of the mouse for all modes
-set mouse=a
+    " Enable use of the mouse for all modes
+    set mouse=a
+   
+    " fast tty, because we are in mintty(xterm2)
+    set ttyfast
+
+    " easy selection, reporing selected text when mouse selecting
+    set ttymouse=xterm2
+
+endif
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -168,4 +179,57 @@ set noswapfile
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprevious<CR>
 
-execute pathogen#infect()
+if has("gui_running") 
+    :colorscheme desert
+    :set guifont=Source\ Code\ Pro
+else
+    :colorscheme desert
+    execute pathogen#infect()
+endif
+
+
+" color terminal definitions
+hi Normal ctermfg=white ctermbg=237
+hi SpecialKey	ctermfg=darkgreen
+hi NonText	cterm=bold ctermfg=darkblue
+hi Directory	ctermfg=darkcyan
+hi ErrorMsg	cterm=bold ctermfg=7 ctermbg=1
+hi IncSearch	cterm=NONE ctermfg=yellow ctermbg=green
+hi Search	cterm=bold,reverse ctermfg=white ctermbg=237
+hi MoreMsg	ctermfg=darkgreen
+hi ModeMsg	cterm=NONE ctermfg=brown
+hi LineNr	ctermfg=3
+hi Question	ctermfg=green
+hi StatusLine	cterm=bold,reverse ctermfg=230 
+hi StatusLineNC cterm=reverse
+hi VertSplit	cterm=reverse
+hi Title	ctermfg=5
+" 228=Khaki
+hi Visual	cterm=reverse ctermfg=64 ctermbg=228  
+hi VisualNOS	cterm=bold,underline
+hi WarningMsg	ctermfg=1
+hi WildMenu	ctermfg=0 ctermbg=3
+hi Folded	ctermfg=darkgrey ctermbg=NONE
+hi FoldColumn	ctermfg=darkgrey ctermbg=NONE
+hi DiffAdd	ctermbg=4
+hi DiffChange	ctermbg=5
+hi DiffDelete	cterm=bold ctermfg=4 ctermbg=6
+hi DiffText	cterm=bold ctermbg=1
+hi Comment	ctermfg=darkcyan
+hi Constant	ctermfg=brown
+hi Special	ctermfg=5
+hi Identifier	ctermfg=6
+hi Statement	ctermfg=3
+hi PreProc	ctermfg=5
+hi Type		ctermfg=2
+hi Underlined	cterm=underline ctermfg=5
+hi Ignore	cterm=bold ctermfg=7
+hi Ignore	ctermfg=darkgrey
+hi Error	cterm=bold ctermfg=7 ctermbg=1
+hi TabLineFill cterm=reverse ctermfg=247
+hi TabLineSel cterm=standout ctermbg=237  ctermfg=white
+hi TabLine  cterm=reverse ctermfg=247 ctermbg=238
+
+" title string
+" boolean option could only be set with the no prefix
+:set notitle
