@@ -184,6 +184,9 @@ if has("gui_running")
     :set guifont=Source\ Code\ Pro
 else
     :colorscheme desert
+    " disable some plugin 
+    let g:pathogen_disabled = []
+    call add(g:pathogen_disabled, 'vim-airline')
     execute pathogen#infect()
 endif
 
@@ -202,7 +205,11 @@ hi LineNr	ctermfg=3
 hi Question	ctermfg=green
 hi StatusLine	cterm=bold,reverse ctermfg=230 
 hi StatusLineNC cterm=reverse
-hi VertSplit	cterm=reverse
+
+" split bar color
+set fillchars-=vert:\|
+hi VertSplit	cterm=bold ctermbg=237 ctermfg=237
+
 hi Title	ctermfg=5
 " 228=Khaki
 hi Visual	cterm=reverse ctermfg=64 ctermbg=228  
@@ -232,4 +239,36 @@ hi TabLine  cterm=reverse ctermfg=247 ctermbg=238
 
 " title string
 " boolean option could only be set with the no prefix
-:set notitle
+:set title
+
+" cursor style in diff mode
+
+if has("gui_running") 
+else
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+endif
+
+" cursor color
+"echo -ne '\e]12;#00FF00\a' # green cursor
+" cursor blink
+"echo -ne "\e[2 q" # non blinking block cursor
+"
+
+" net rw settings
+
+" open file in new tab
+let g:netrw_browse_split=3
+
+" tree style listing
+let g:netrw_liststyle=3
+
+" enable mouse in netrw
+let g:netrw_mousemaps= 0
+
+" cabbrev
+" always open help in tab instead of window
+cabbrev help tab help
+
