@@ -187,6 +187,7 @@ else
     " disable some plugin 
     let g:pathogen_disabled = []
     call add(g:pathogen_disabled, 'vim-airline')
+    " call add(g:pathogen_disabled, 'autocomplpop')
     execute pathogen#infect()
 endif
 
@@ -272,3 +273,22 @@ let g:netrw_mousemaps= 0
 " always open help in tab instead of window
 cabbrev help tab help
 
+" let g:solarized_termcolors=256
+" set background=dark
+" colorscheme solarized
+
+" active omni complete, the internal complete for vim
+" set omnifunc=syntaxcomplete#Complete
+"
+
+" highlighting
+hi MatchParen ctermbg=black guibg=lightblue cterm=bold ctermfg=black
+let loaded_matchparen = 1
+
+" omnifunc intgreted java autocomplpop
+if has("autocmd") 
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
+endif 
+
+nnoremap ,w :tabnext<CR>
+nnoremap ,b :tabprev<CR>
