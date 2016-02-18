@@ -28,10 +28,14 @@ _cd_where()
 alias cdw=_cd_where
 
 # let java tools say english
-alias javac='javac -J-Duser.language=en'
+alias javac='javac -J-Duser.language=en -encoding UTF-8'
 alias jdb='jdb -J-Duser.language=en'
 alias javah='javah -J-Duser.language=en'
-alias java='java -Duser.language=en'
+alias java='java -Duser.language=en -Dfile.encoding=UTF-8'
+alias jar='jar -J-Duser.language=en'
+
+alias catalina='/c/apache-tomcat-9.0.0.M3/bin/catalina.sh'
+
 
 # build debug go code
 alias god='go build -gcflags "-N -l"'
@@ -63,3 +67,13 @@ export LIB=$LIB'C:\Program Files\Windows Kits\NETFXSDK\4.6.1\lib\um\x86;C:\Progr
 export LIB=$LIB'\Microsoft.VCLibs\14.0\References\CommonConfiguration\neutral;'
 # cd to my workspace
 cd ~/viproj
+
+# go ssh
+function ssh2()
+{
+    ssh root@ubt15
+}
+
+
+export JAVA_HOME="/c/Program Files/Java/jdk1.8.0_66"
+

@@ -292,3 +292,13 @@ endif
 
 nnoremap ,w :tabnext<CR>
 nnoremap ,b :tabprev<CR>
+
+
+nnoremap <C-Down> :tabclose<CR>
+" disable highlight matching
+" hi MatchParen cterm=bold ctermbg=black ctermfg=black
+" let loaded_matchparen = 1
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" open tags in new tab with ctrl+arrow up
+nnoremap <C-Up> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
