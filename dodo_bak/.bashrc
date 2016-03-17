@@ -33,6 +33,7 @@ alias jdb='jdb -J-Duser.language=en'
 alias javah='javah -J-Duser.language=en'
 alias java='java -Duser.language=en -Dfile.encoding=UTF-8'
 alias jar='jar -J-Duser.language=en'
+alias javadoc='javadoc -J-Duser.language=en'
 
 alias catalina='/c/apache-tomcat-9.0.0.M3/bin/catalina.sh'
 
@@ -77,3 +78,7 @@ function ssh2()
 
 export JAVA_HOME="/c/Program Files/Java/jdk1.8.0_66"
 
+_tclog()
+{
+ cd "/e/Program Files/spring-tool-suite-3.7.2.RELEASE-e4.5.1-win32/sts-bundle/pivotal-tc-server-developer-3.1.2.RELEASE/base-instance/logs"
+}
