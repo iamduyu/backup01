@@ -28,5 +28,5 @@ White=248,248,242
 BoldWhite=249,248,245
 FontSmoothing=partial
 Scrollbar=right
-Locale=zh_CN
-Charset=GBK
+Locale=
+Charset=
